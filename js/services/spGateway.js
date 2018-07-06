@@ -47,18 +47,5 @@ app.factory('SpGateway', ['AppSettings', function(appSettings) {
             error: errorCallback
         });
     },
-
-	GetCurrentUserInfo: function() {
-	    return $($($.ajax(
-	        {
-	            type: 'get',
-	            async: false,
-	            url: appSettings['webUrl'].replace(/\/*$/, '') +
-	                '/_layouts/userdisp.aspx?Force=True&' +
-	                (new Date()).getTime()
-	        }
-	    ).responseText).find('#SPFieldText')[1]).text().replace(/^[\s\r\n ]+/mg, '').replace(/[\s\r\n ]+$/mg, '');
-	}
-	
   };
 }]);
