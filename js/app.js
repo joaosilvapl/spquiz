@@ -81,16 +81,6 @@ var app = angular.module('quizApp', [])
                     },
                     {
                         id: 2,
-                        text:'What is the software used by most a-Kasse in Denmark?',
-                        options:[
-                            {id:1, text:'Facilia' },
-                            {id:2, text:'Modulus', correct:true },
-                            {id:3, text:'Winnie' },
-                            {id:0, text:'I\'ve no idea' }
-                        ]
-                    },
-                    {
-                        id: 3,
                         text:'When did the development of Modulus start?',
                         options:[
                             {id:1, text:'Before 2008', correct:true },
@@ -100,7 +90,7 @@ var app = angular.module('quizApp', [])
                         ]
                     },
                     {
-                        id: 4,
+                        id: 3,
                         text:'What is a Job Center?',
                         options:[
                             {id:1, text:'A career fair in the Copenhagen\'s technical university'},
@@ -110,7 +100,7 @@ var app = angular.module('quizApp', [])
                         ]
                     },
                     {
-                        id: 5,
+                        id: 4,
                         text:'What is DMS?',
                         options:[
                             {id:1, text:'A web application used by members to interact with their a-Kasse', correct:true},
@@ -120,7 +110,7 @@ var app = angular.module('quizApp', [])
                         ]
                     },
                     {
-                        id: 6,
+                        id: 5,
                         text:'What is SKAT?',
                         options:[
                             {id:1, text:'The Danish tax authority', correct:true},
@@ -130,7 +120,7 @@ var app = angular.module('quizApp', [])
                         ]
                     },
                     {
-                        id: 7,
+                        id: 6,
                         text:'What is \'Efterløn\'?',
                         options:[
                             {id:1, text:'An AfterDark event' },
@@ -140,7 +130,7 @@ var app = angular.module('quizApp', [])
                         ]
                     },
                     {
-                        id: 8,
+                        id: 7,
                         text:'If someone is unemployed in Denmark and wants to receive benefits from his a-Kasse...',
                         options:[
                             {id:1, text:'He must prove he is actively looking for a job', correct:true},
@@ -150,7 +140,7 @@ var app = angular.module('quizApp', [])
                         ]
                     },
                     {
-                        id: 9,
+                        id: 8,
                         text:'A member of an a-Kasse must also be member of the parent Union?',
                         options:[
                             {id:1, text:'Yes'},
@@ -160,12 +150,22 @@ var app = angular.module('quizApp', [])
                         ]
                     },
                     {
-                        id: 10,
-                        text:'What is the purpose of the \'Modulus Connector\'',
+                        id: 9,
+                        text:'What is the purpose of the \'Modulus Connector\'?',
                         options:[
-                            {id:1, text:'Enable information from Modulus to be displayed on CRM'},
-                            {id:2, text:'Enable third-party vendors to invoke Modulus Core web-services', correct:true },
+                            {id:1, text:'Enable information from Modulus to be displayed on CRM', correct:true},
+                            {id:2, text:'Enable third-party vendors to invoke Modulus Core web-services' },
                             {id:3, text:'Allow members to report feature requests to the Modulus development team' },
+                            {id:0, text:'I\'ve no idea' }
+                        ]
+                    },
+                    {
+                        id: 10,
+                        text:'What is a \'Batch Job\'?',
+                        options:[
+                            {id:1, text:'A temporary job for unemployed people with lower education'},
+                            {id:2, text:'An operation that runs in the background and can process data related to multiple items (members, payments, etc.)', correct:true },
+                            {id:3, text:'An alternative to Windows Scheduled Tasks which can also run on Linux' },
                             {id:0, text:'I\'ve no idea' }
                         ]
                     }
