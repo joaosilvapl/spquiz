@@ -174,4 +174,25 @@ var app = angular.module('quizApp', [])
         
         ];
 
+        $scope.rankingData = [
+            {
+                quizId: 1,
+                quizTitle: 'Basic1 - 10 questions',
+                scores:[
+                    {loginName:'jhas', score: 7, position: 1},
+                    {loginName:'pwa', score: 10, position: 2},
+                    {loginName:'cca', score: 9, position: 3},
+                ]
+            },
+            {
+                quizId: 2,
+                quizTitle: 'Basic2 - 10 questions',
+                scores:[
+                    {loginName:'jhas', score: 4, position: 1},
+                    {loginName:'pwa', score: 7, position: 2},
+                    {loginName:'cca', score: 10, position: 3},
+                ]
+            }
+        ];
+
     }]);
