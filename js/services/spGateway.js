@@ -9,7 +9,7 @@ app.factory('SpGateway', ['AppSettings', function(appSettings) {
     ParticipateInternal: function (requestDigestValue, result, successCallback, errorCallback) {
         var itemType = "SP.Data.KnowledgeQuizListItem";
         var itemProperties = {
-            'QuizId': result.quizData.id,
+            'QuizId': result.quizData.id.toString(),
             'Score': result.score.toString(),
             'Properties': JSON.stringify(result)
         };
