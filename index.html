@@ -92,8 +92,10 @@
                         <div class="separatorLine"></div>
                         <div class="form-group" ng-repeat="question in quizData[0].questions">
                             <label for="selectQuestion">{{question.id}} {{question.text}}</label>
-                            <select id="selectQuestion" class="form-control" ng-model="question.selectedAnswer" ng-options="item.id as item.text for item in question.options">
-                            </select>
+                            <div ng-repeat="item in question.options">
+                                <input type="radio" ng-model="question.selectedAnswer" value="{{item.id}}" />
+                                <span>{{item.text}}</span>
+                            </div>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
