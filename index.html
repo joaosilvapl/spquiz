@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html ng-app="quizApp" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <link rel="shortcut icon" href="img/favicon.png" />
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Modulus Knowledge Quiz</title>
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/appSettings.js"></script>
+        <script src="js/services/spGateway.js"></script>        
+        <link rel="stylesheet" href="css/bootstrap.css"/> 
+        <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+        <style type="text/css">
+            .separatorLine {
+                padding-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" ng-controller="quizCtrl">
+                    <!-- Finish Modal -->
+                    <div class="modal fade" id="finishModal" tabindex="-1" role="dialog" aria-labelledby="finishModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="finishModalLabel">Quiz completed</h5>
+                            </div>
+                                <div class="modal-body">
+                                    Thank you for participating.
+                                </div>
+                                <div>
+                                    Your score: <span ng-bind="result.score"></span>
+                                </div>
+                                <div>
+                                    Your position in the ranking: <span ng-bind="result.score"></span>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="redirect()">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Error Modal -->
+                    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="errorModalLabel">Error occurred</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Error occurred. Please try again or contact <a href="mailto:jhas@netcompany.com">JHAS (Joao Silva)</a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Start form-->
+                    <form ng-submit="startQuiz()" ng-hide="quizVisible">
+                        <div class="form-group">
+                            <div>
+                                <h1>Modulus Knowledge Quiz</h1>
+                                <span>Select a quiz:</span>
+                                <select id="selectQuiz">
+                                    <option value="quizBasic1">Basic 1 - 10 questions</option>
+                                    <option value="quizBasic2" disabled>Basic 2 - TODO</option>
+                                    <option value="quizIntermediate1" disabled>Intermediate 1 - TODO</option>
+                                    <option value="quizIntermediate2" disabled>Intermediate 2 - TODO</option>
+                                    <option value="quizAdvanced1" disabled>Advanced 1 - TODO</option>
+                                    <option value="quizAdvanced2" disabled>Advanced 2 - TODO</option>
+                                </select>
+                            </div>
+                            <div class="separatorLine"></div>
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg">Start</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Quiz form -->
+                    <form ng-submit="send()" ng-show="quizVisible">
+                        <h1>Modulus Knowledge Quiz</h1>
+                        <div class="separatorLine"></div>
+                        <h2>{{quizData[0].title}}</h2>
+                        <div class="separatorLine"></div>
+                        <div class="form-group" ng-repeat="question in quizData[0].questions">
+                            <label for="selectQuestion">{{question.id}} {{question.text}}</label>
+                            <select id="selectQuestion" class="form-control" ng-model="question.selectedAnswer" ng-options="item.id as item.text for item in question.options">
+                            </select>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>    
+            
+        
+    </body>
+</html>
